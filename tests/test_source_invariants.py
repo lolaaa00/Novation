@@ -98,9 +98,16 @@ class SourceInvariantTests(unittest.TestCase):
         for relative in ("frontend", "web", "app", "pages", "package.json"):
             self.assertFalse((ROOT / relative).exists(), relative)
 
-    def test_no_placeholder_live_claim_in_readme(self):
+    def test_readme_live_claim_matches_deployment_evidence(self):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
-        self.assertIn("No live address or transaction hash is claimed", readme)
+        deployment = (ROOT / "docs" / "DEPLOYMENT.md").read_text(encoding="utf-8")
+        self.assertIn("docs/DEPLOYMENT.md", readme)
+        # If the README claims a specific live contract address, that exact
+        # address must also appear in the deployment evidence document, so the
+        # README can never drift from or fabricate ahead of observed evidence.
+        address_matches = re.findall(r"0x[0-9a-fA-F]{40}", readme)
+        for address in address_matches:
+            self.assertIn(address, deployment)
 
     def test_fixture_cases_are_distinct(self):
         q = (ROOT / "fixtures" / "candidate_qualified.md").read_text(encoding="utf-8")

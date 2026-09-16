@@ -141,4 +141,4 @@ See [`AGENT_HANDOFF.md`](AGENT_HANDOFF.md) for the exact final-runtime sequence.
 
 ## Status
 
-Source implementation and deterministic tests are included. **No live address or transaction hash is claimed in this package.** The final operator must deploy with a funded signer, execute the live lifecycle, and replace the placeholders in [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) only with observed results.
+Source implementation and deterministic tests are included. The primary contract is **deployed and live on GenLayer Studionet** at `0x271e7156fdD830Ff4361D339Ed48d6e91d8f46aB`. See [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) for the exact contract address, finalized transaction hashes, and live lifecycle evidence actually observed on chain.

@@ -6,7 +6,7 @@
 - [x] deterministic/source suite: **27 tests passed**
 - [x] committed Python compile check: passed
 - [x] deployment helper fails safely when the pinned CLI is absent
-- [ ] official GenLayer runtime / live-chain checks: final operator required
+- [x] official GenLayer runtime / live-chain checks: deployed and exercised live on Studionet; see `docs/DEPLOYMENT.md`
 
 ## Complete in this package
 
@@ -30,15 +30,15 @@
 - [x] synthetic live-test evidence fixtures
 - [x] reviewer, security, consensus and live-test documentation
 
-## Must be completed by the final operator
+## Completed by the final operator
 
-- [ ] run official GenVM lint/runtime checks in an environment with GenLayer tooling
-- [ ] confirm funded signer
-- [ ] deploy final source to Studionet chain `61999` with CLI `0.39.1`
-- [ ] execute the full qualified / unqualified / inconclusive live lifecycle
-- [ ] optionally deploy `examples/continuity_gate.py` and prove the current-obligor switch live
-- [ ] write only observed address, transaction hashes and readbacks into `docs/DEPLOYMENT.md`
-- [ ] re-run preflight/tests after evidence update
-- [ ] push final repository to `lolaaa00/Novation`
+- [x] checked for an official GenVM lint tool in GenLayer CLI `0.39.1`; none is exposed by that release, so no lint pass is claimed (see `docs/DEPLOYMENT.md`)
+- [x] confirmed a funded signer (`probe`, 9 GEN on Studionet)
+- [x] deployed final source to Studionet chain `61999` with CLI `0.39.1`
+- [x] executed the full qualified / unqualified / inconclusive live lifecycle, including a second novation and agreement closure
+- [x] deployed `examples/continuity_gate.py` and proved the current-obligor switch live (old incumbents rejected, current incumbent accepted)
+- [x] wrote only observed address, transaction hashes and readbacks into `docs/DEPLOYMENT.md`
+- [x] re-ran preflight/tests after the evidence update
+- [x] pushed the final repository to `lolaaa00/Novation`
 
-This package deliberately makes **no claim of a live deployment** until those steps have actually occurred.
+This package's live evidence in `docs/DEPLOYMENT.md` reflects only finalized Studionet transactions actually observed during deployment.
