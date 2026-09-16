@@ -1,0 +1,8 @@
+[project]
+name = "novation-intelligent-contract"
+version = "0.1.0"
+requires-python = ">=3.12"
+description = "Standalone GenLayer Novation continuity primitive"
+
+[tool.unittest]
+test-directory = "tests"

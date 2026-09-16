@@ -1,0 +1,20 @@
+name: source-ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Preflight
+        run: python scripts/preflight.py
+      - name: Deterministic tests
+        run: python -m unittest discover -s tests -v
+      - name: Compile committed Python
+        run: python -m compileall -q contracts examples scripts tests

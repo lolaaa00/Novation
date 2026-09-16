@@ -1,0 +1,2 @@
+# Source and deterministic contract tests are intentionally standard-library only.
+# GenLayer/GenVM runtime tooling is installed separately by the final operator.
